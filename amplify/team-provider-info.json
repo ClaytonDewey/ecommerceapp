@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "ecommerceapp701729fc": {}
+        "ecommerceapp701729fc": {},
+        "true": {}
       },
       "function": {
         "ecommerceapp701729fcPostConfirmation": {
