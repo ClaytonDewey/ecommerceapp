@@ -86,15 +86,24 @@ async function canPerformAction(event, group) {
  * Example get method *
  **********************/
 
-app.get("/products", function (req, res) {
-    // Add your code here
-    res.json({ success: "get call succeed!", url: req.url });
+app.get("/products", async function (req, res) {
+    try {
+        const data = await getItems();
+        res.json({ data: data });
+    } catch (err) {
+        res.json({ error: err });
+    }
 });
 
-app.get("/products/*", function (req, res) {
-    // Add your code here
-    res.json({ success: "get call succeed!", url: req.url });
-});
+async function getItems() {
+    var params = { TableName: ddb_table_name };
+    try {
+        const data = await docClient.scan(params).promise();
+        return data;
+    } catch (err) {
+        return err;
+    }
+}
 
 /****************************
  * Example post method *
