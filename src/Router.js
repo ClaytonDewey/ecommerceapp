@@ -14,17 +14,17 @@ export const Router = () => {
                 <Route
                     exact
                     path="/"
-                    element={Main}
+                    element={<Main />}
                 />
                 <Route
                     path="/admin"
-                    element={Admin}
+                    element={<Admin />}
                 />
                 <Route
                     path="/profile"
-                    element={Profile}
+                    element={<Profile />}
                 />
-                <Route element={Main} />
+                <Route element={<Main />} />
             </Routes>
         </HashRouter>
     );
