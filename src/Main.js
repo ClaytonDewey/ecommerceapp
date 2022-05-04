@@ -22,7 +22,6 @@ export const Main = () => {
 
     const getProducts = async () => {
         const data = await API.get("ecommerceapi", "/products");
-        console.log("data: ", data);
 
         if (didCancel) {
             return;
@@ -49,8 +48,6 @@ export const Main = () => {
                     id: id,
                 },
             });
-
-            console.log("successfully deleted item");
         } catch (err) {
             console.error("error: ", err);
         }

@@ -11,7 +11,7 @@ export const Profile = () => {
                 {({ signOut, user }) => (
                     <main>
                         <h1>Hello {user.username}</h1>
-                        {console.log(user)}
+
                         <h2>Email: {user.attributes.email}</h2>
                         <button onClick={signOut}>Sign out</button>
                     </main>

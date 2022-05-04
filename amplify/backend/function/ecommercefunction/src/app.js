@@ -52,7 +52,10 @@ app.use(function (req, res, next) {
 });
 
 async function getGroupsForUser(event) {
-    let userSub = event.requestContext.identity.cognitoAuthenticationProvider.split(":CognitoSignIn:")[1];
+    let userSub =
+        event.requestContext.identity.cognitoAuthenticationProvider.split(
+            ":CognitoSignIn:"
+        )[1];
     let userParams = {
         UserPoolId: userpoolId,
         Filter: `sub = "${userSub}"`,
@@ -63,7 +66,9 @@ async function getGroupsForUser(event) {
         UserPoolId: userpoolId,
         Username: user.Username,
     };
-    const groupData = await cognito.adminListGroupsForUser(groupParams).promise();
+    const groupData = await cognito
+        .adminListGroupsForUser(groupParams)
+        .promise();
     return groupData;
 }
 
@@ -160,7 +165,7 @@ app.delete("/products", async function (req, res) {
 });
 
 app.listen(3000, function () {
-    console.log("App started");
+    // console.log("App started");
 });
 
 // Export the app object. When executing the application local this does nothing. However,
