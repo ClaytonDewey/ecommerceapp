@@ -1,4 +1,20 @@
 {
+  "api": {
+    "ecommerceapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "ecommercefunction"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
   "auth": {
     "ecommerceappaab695f3": {
       "customAuth": false,
@@ -37,6 +53,11 @@
   },
   "function": {
     "ecommerceappaab695f3PostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "ecommercefunction": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
