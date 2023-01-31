@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from 'antd';
-import { HomeOutlined , UserOutlined, ProfileOutlined } from '@antd-design/icons'
+import { HomeOutlined, UserOutlined, ProfileOutlined } from '@ant-design/icons';
 import { Hub } from 'aws-amplify'
 import checkUser from './checkUser'
 
